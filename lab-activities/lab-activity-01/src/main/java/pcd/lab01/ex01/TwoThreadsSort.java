@@ -10,8 +10,6 @@ public class TwoThreadsSort {
         int[] v = genArray(VECTOR_SIZE);
         log("Array generated");
 
-        //SORTING
-        log("Generating array");
 
         // THREADS
         //thread 1
@@ -28,7 +26,7 @@ public class TwoThreadsSort {
         //join
         threadOne.join();
         threadTwo.join();
-        log("Sorting completed");
+        //log("Sorting completed");
         //merge
         int[] res = new int[v.length];
         int i = 0;
@@ -58,7 +56,7 @@ public class TwoThreadsSort {
             j += 1;
         }
         long endTime = System.nanoTime();
-        long elapsedTime = (endTime - startTime) / 1000_000;
+        long elapsedTime = (endTime - startTime) / 1_000_000;
         log("Total time = " + elapsedTime + " ms");
         //dumpArray(res);
     }

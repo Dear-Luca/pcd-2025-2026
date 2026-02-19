@@ -18,7 +18,7 @@ public class RunnableTwoThreads implements Runnable{
 
     @Override
     public void run() {
-        log("Sorting from " + start + " to " + end);
+        //log("Sorting from " + start + " to " + end);
         Arrays.sort(array, start, end);
     }
 }
