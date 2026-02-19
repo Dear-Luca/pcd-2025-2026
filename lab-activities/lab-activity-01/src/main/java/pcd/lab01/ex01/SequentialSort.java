@@ -23,7 +23,7 @@ public class SequentialSort {
 	}
 
 
-	private static int[] genArray(int n) {
+	public static int[] genArray(int n) {
 		Random gen = new Random(System.currentTimeMillis());
 		var v = new int[n];
 		for (int i = 0; i < v.length; i++) {
@@ -32,14 +32,14 @@ public class SequentialSort {
 		return v;
 	}
 
-	private static void dumpArray(int[] v) {
+	public static void dumpArray(int[] v) {
 		for (var l:  v) {
 			System.out.print(l + " ");
 		}
 		System.out.println();
 	}
 
-	private static void log(String msg) {
+	public static void log(String msg) {
 		System.out.println(msg);
 	}
 }
