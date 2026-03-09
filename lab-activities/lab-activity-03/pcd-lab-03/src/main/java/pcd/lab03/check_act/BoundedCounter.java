@@ -10,22 +10,18 @@ public class BoundedCounter {
 		this.max = max;
 	}
 	
-	public void inc() throws OverflowException {
-		synchronized (this){
+	public synchronized void inc() throws OverflowException {
 			if (cont + 1 > max){
 				throw new OverflowException();
 			}
 			cont++;
-		}
 	}
 
-	public  void dec() throws UnderflowException {
-		synchronized (this){
+	public  synchronized void dec() throws UnderflowException {
 			if (cont - 1 < min){
 				throw new UnderflowException();
 			}
 			cont--;
-		}
 	}
 	
 	public  int getValue(){

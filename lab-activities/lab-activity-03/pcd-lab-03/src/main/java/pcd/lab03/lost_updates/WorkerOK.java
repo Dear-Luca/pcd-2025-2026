@@ -1,12 +1,12 @@
 package pcd.lab03.lost_updates;
 
 
-public class Worker extends Thread {
+public class WorkerOK extends Thread {
 	
 	private UnsafeCounter counter;
 	private long ntimes;
 	
-	public Worker(String name, UnsafeCounter counter, long ntimes){
+	public WorkerOK(String name, UnsafeCounter counter, long ntimes){
 		super(name);
 		this.counter = counter;
 		this.ntimes = ntimes;
@@ -15,7 +15,9 @@ public class Worker extends Thread {
 	public void run(){
 		log("started");
 		for (long i = 0; i < ntimes; i++){
-			counter.inc();
+			synchronized (counter) {
+				counter.inc();
+			}
 		}
 		log("completed");
 	}

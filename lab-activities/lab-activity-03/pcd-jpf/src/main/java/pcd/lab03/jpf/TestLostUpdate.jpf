@@ -1,7 +1,0 @@
-target = pcd.lab03.jpf.TestLostUpdate
-
-classpath=/pcd-jpf/target/classes
-
-listener=gov.nasa.jpf.listener.PreciseRaceDetector
-
-report.console.property_violation=error,trace
