@@ -11,10 +11,12 @@ import java.util.concurrent.Semaphore;
  */
 public class TestPingPong {
 	public static void main(String[] args) {
-		Semaphore semaphore = new Semaphore(1,true);
+		Semaphore ping = new Semaphore(1,true);
+		Semaphore pong = new Semaphore(0,true);
 
-		new Pinger(semaphore).start();
-		new Ponger(semaphore).start();
+
+		new Pinger(pong, ping).start();
+		new Ponger(ping, pong).start();
 	}
 
 }
